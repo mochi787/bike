@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>موتو اَپکس | MOTO APEX - نمایشگاه تخصصی موتورسیکلت‌های صفر و کارشناسی‌شده</title>
+
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #0B0D10;
+            --bg-surface: #14181F;
+            --bg-card: #1A1F29;
+            --bg-elevated: #222834;
+            --text-main: #F3F5F8;
+            --text-muted: #9AA4B2;
+            --accent: #FF5500;
+            --accent-hover: #E04800;
+            --accent-glow: rgba(255, 85, 0, 0.22);
+            --success: #16A34A;
+            --warning: #F59E0B;
+            --danger: #DC2626;
+            --border: #2A313F;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --transition: all 0.28s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* نوار بالایی وضعیت نمایشگاه */
+        .top-strip {
+            background: linear-gradient(90deg, #11141A 0%, #1F140E 50%, #11141A 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .top-strip strong { color: var(--accent); }
+
+        /* هدر */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 13, 16, 0.92);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand .en {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .brand .en span { color: var(--accent); }
+        .brand .fa { font-size: 0.75rem; color: var(--text-muted); }
+
+        nav { display: flex; gap: 22px; }
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        nav a:hover { color: var(--accent); }
+
+        .header-actions { display: flex; gap: 10px; align-items: center; }
+
+        .btn-accent {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 0.86rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .btn-accent:hover { background: var(--accent-hover); box-shadow: 0 0 20px var(--accent-glow); }
+
+        .btn-ghost {
+            background: var(--bg-elevated);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 10px 16px;
+            border-radius: var(--radius-sm);
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .btn-ghost:hover { border-color: var(--accent); color: #fff; }
+
+        /* بخش Hero */
+        .hero {
+            padding: 64px 5%;
+            background: radial-gradient(circle at 20% 30%, rgba(255, 85, 0, 0.14), transparent 55%),
+                        linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-dark) 100%);
+            border-bottom: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 42px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 85, 0, 0.14);
+            color: var(--accent);
+            border: 1px solid rgba(255, 85, 0, 0.35);
+            padding: 5px 14px;
+            border-radius: 30px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 2.35rem;
+            font-weight: 800;
+            line-height: 1.35;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            margin-bottom: 28px;
+            max-width: 550px;
+        }
+
+        .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 32px;
+            padding-top: 22px;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat-item strong { display: block; font-size: 1.3rem; color: var(--accent); }
+        .stat-item span { font-size: 0.8rem; color: var(--text-muted); }
+
+        .hero-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+        }
+
+        .hero-card img { width: 100%; height: 340px; object-fit: cover; display: block; }
+
+        /* بخش‌های اصلی */
+        .section { padding: 68px 5%; }
+        .section-alt { background: var(--bg-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+        .section-title { text-align: center; margin-bottom: 38px; }
+        .section-title h2 { font-size: 1.85rem; margin-bottom: 8px; }
+        .section-title p { color: var(--text-muted); font-size: 0.94rem; }
+
+        /* فیلترها */
+        .filters-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 34px;
+        }
+
+        .filter-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+
+        .chip {
+            background: var(--bg-card);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 7px 16px;
+            border-radius: 30px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 0.84rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .chip.active, .chip:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        /* گرید موتورسیکلت‌ها */
+        .bikes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 24px;
+        }
+
+        .bike-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .bike-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+        }
+
+        .bike-img-box { position: relative; height: 215px; background: #0e1015; }
+        .bike-img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        .badge-status {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 4px 11px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .st-available { background: rgba(22, 163, 74, 0.92); color: #fff; }
+        .st-preorder { background: rgba(245, 158, 11, 0.94); color: #111; }
+        .st-sold { background: rgba(220, 38, 38, 0.92); color: #fff; }
+
+        .sound-btn-float {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            background: rgba(11, 13, 16, 0.88);
+            color: #fff;
+            border: 1px solid var(--accent);
+            padding: 5px 11px;
+            border-radius: 20px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 0.76rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .sound-btn-float:hover, .sound-btn-float.playing {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .bike-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .bike-meta { font-size: 0.78rem; color: var(--accent); font-weight: 700; margin-bottom: 4px; }
+        .bike-title { font-size: 1.08rem; font-weight: 700; margin-bottom: 12px; }
+
+        .specs-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 8px;
+            text-align: center;
+            font-size: 0.78rem;
+            margin-bottom: 14px;
+        }
+
+        .specs-strip span { display: block; color: var(--text-muted); font-size: 0.7rem; }
+
+        .price-row {
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px dashed var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-val { font-size: 1.1rem; font-weight: 800; color: #fff; }
+        .price-val small { font-size: 0.74rem; color: var(--text-muted); font-weight: 400; }
+
+        .card-btns { display: grid; grid-template-columns: 1.4fr 1fr auto; gap: 7px; margin-top: 14px; }
+
+        /* ماشین‌حساب اقساط */
+        .calc-grid {
+            max-width: 980px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: var(--text-main); }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px 13px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: #fff;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        input[type="range"] { accent-color: var(--accent); padding: 0; }
+
+        .calc-summary {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 9px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        .summary-highlight {
+            margin-top: 14px;
+            padding: 14px;
+            background: rgba(255, 85, 0, 0.12);
+            border: 1px solid rgba(255, 85, 0, 0.4);
+            border-radius: var(--radius-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 800;
+            font-size: 1.05rem;
+        }
+
+        /* نوار شناور مقایسه */
+        .compare-dock {
+            position: fixed;
+            bottom: 18px;
+            right: 5%;
+            left: 5%;
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--bg-elevated);
+            border: 1px solid var(--accent);
+            border-radius: var(--radius-md);
+            padding: 12px 18px;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            z-index: 900;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.65);
+        }
+
+        .compare-dock.visible { display: flex; }
+
+        /* مودال‌ها */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.78);
+            backdrop-filter: blur(6px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 16px;
+        }
+
+        .modal-overlay.open { display: flex; }
+
+        .modal-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            max-width: 680px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 28px;
+            position: relative;
+        }
+
+        .modal-box.wide { max-width: 920px; }
+
+        .close-btn {
+            position: absolute;
+            top: 16px;
+            left: 18px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 14px;
+            font-size: 0.86rem;
+        }
+
+        .compare-table th, .compare-table td {
+            border: 1px solid var(--border);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .compare-table th { background: var(--bg-surface); color: var(--accent); }
+
+        .admin-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; border-bottom: 1px solid var(--border); padding-bottom: 12px; }
+        .admin-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+        .req-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 14px;
+            margin-bottom: 12px;
+        }
+
+        .toast-wrap {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toast {
+            background: var(--bg-elevated);
+            color: #fff;
+            border-right: 4px solid var(--accent);
+            padding: 12px 18px;
+            border-radius: var(--radius-sm);
+            font-size: 0.86rem;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .toast.err { border-right-color: var(--danger); }
+
+        footer {
+            background: #07080A;
+            border-top: 1px solid var(--border);
+            padding: 46px 5% 24px;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-bottom: 28px;
+        }
+
+        /* نوار ناوبری پایین صفحه مخصوص موبایل (App Bottom Tab Bar) */
+        .mobile-bottom-nav {
+            display: none;
+        }
+
+        .sheet-handle {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: calc(78px + env(safe-area-inset-bottom));
+            }
+
+            .top-strip {
+                justify-content: center;
+                text-align: center;
+                font-size: 0.76rem;
+                padding: 7px 4%;
+            }
+
+            .top-strip div:last-child {
+                display: none;
+            }
+
+            header {
+                padding: 11px 4%;
+            }
+
+            .brand .en {
+                font-size: 1.22rem;
+            }
+
+            .brand .fa {
+                font-size: 0.68rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .header-actions .btn-ghost {
+                display: none;
+            }
+
+            .header-actions .btn-accent {
+                padding: 8px 13px;
+                font-size: 0.8rem;
+            }
+
+            /* بخش معرفی بهینه برای صفحه نمایش موبایل */
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 28px 4% 36px;
+                gap: 22px;
+            }
+
+            .hero-badge {
+                font-size: 0.75rem;
+                padding: 4px 11px;
+                margin-bottom: 12px;
+            }
+
+            .hero h1 {
+                font-size: 1.52rem;
+                line-height: 1.42;
+                margin-bottom: 12px;
+            }
+
+            .hero p {
+                font-size: 0.88rem;
+                margin-bottom: 20px;
+            }
+
+            .hero-cta {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .hero-cta a {
+                width: 100%;
+                min-height: 44px;
+                font-size: 0.84rem;
+                padding: 10px 12px;
+            }
+
+            .hero-stats {
+                margin-top: 22px;
+                padding-top: 16px;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .stat-item strong {
+                font-size: 1.08rem;
+            }
+
+            .stat-item span {
+                font-size: 0.72rem;
+                line-height: 1.4;
+                display: block;
+            }
+
+            .hero-card img {
+                height: 215px;
+            }
+
+            /* بخش‌ها و فیلترهای اسکرول افقی لمسی */
+            .section {
+                padding: 42px 4%;
+            }
+
+            .section-title {
+                margin-bottom: 24px;
+            }
+
+            .section-title h2 {
+                font-size: 1.42rem;
+            }
+
+            .section-title p {
+                font-size: 0.84rem;
+            }
+
+            .filters-wrap {
+                align-items: stretch;
+                gap: 10px;
+                margin-bottom: 24px;
+            }
+
+            .filter-row {
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-bottom: 4px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .filter-row::-webkit-scrollbar {
+                display: none;
+            }
+
+            .chip {
+                flex-shrink: 0;
+                min-height: 38px;
+                padding: 7px 15px;
+                font-size: 0.82rem;
+            }
+
+            /* کارت‌های موتورسیکلت تمام‌عرض و لمسی */
+            .bikes-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .bike-img-box {
+                height: 205px;
+            }
+
+            .sound-btn-float {
+                padding: 7px 13px;
+                font-size: 0.8rem;
+            }
+
+            .bike-body {
+                padding: 16px;
+            }
+
+            .card-btns {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+
+            .card-btns [data-select-calc] {
+                grid-column: 1 / -1;
+                min-height: 44px;
+                font-size: 0.86rem;
+            }
+
+            .card-btns [data-inspect],
+            .card-btns [data-compare] {
+                min-height: 42px;
+                font-size: 0.82rem;
+            }
+
+            /* ماشین‌حساب اقساط و فرم‌ها بدون زوم ناخواسته iOS */
+            .calc-grid,
+            .admin-grid-2 {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .calc-grid {
+                padding: 20px 16px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 16px;
+                min-height: 44px;
+            }
+
+            input[type="range"] {
+                height: 34px;
+            }
+
+            .calc-summary {
+                padding: 18px 16px;
+            }
+
+            .summary-line {
+                font-size: 0.84rem;
+            }
+
+            .summary-highlight {
+                flex-direction: column;
+                gap: 4px;
+                text-align: center;
+            }
+
+            /* نوار مقایسه بالای منوی پایین موبایل */
+            .compare-dock {
+                bottom: calc(74px + env(safe-area-inset-bottom));
+                right: 3%;
+                left: 3%;
+                padding: 10px 12px;
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+                gap: 8px;
+            }
+
+            .compare-dock > div:last-child {
+                display: grid;
+                grid-template-columns: 1.5fr 1fr;
+                gap: 8px;
+            }
+
+            /* تبدیل مودال‌ها به Bottom Sheet اپلیکیشنی در موبایل */
+            .modal-overlay {
+                align-items: flex-end;
+                padding: 0;
+            }
+
+            .modal-box,
+            .modal-box.wide {
+                max-width: 100%;
+                max-height: 88vh;
+                border-radius: 20px 20px 0 0;
+                border-bottom: none;
+                padding: 14px 16px calc(24px + env(safe-area-inset-bottom));
+                animation: slideUpSheet 0.25s ease-out;
+            }
+
+            @keyframes slideUpSheet {
+                from { transform: translateY(100%); }
+                to { transform: translateY(0); }
+            }
+
+            .sheet-handle {
+                display: block;
+                width: 42px;
+                height: 4px;
+                background: var(--border);
+                border-radius: 4px;
+                margin: 0 auto 14px;
+            }
+
+            .close-btn {
+                top: 14px;
+                left: 14px;
+                width: 36px;
+                height: 36px;
+            }
+
+            .toast-wrap {
+                bottom: calc(80px + env(safe-area-inset-bottom));
+                left: 4%;
+                right: 4%;
+            }
+
+            /* نوار ناوبری ثابت پایین موبایل */
+            .mobile-bottom-nav {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                z-index: 950;
+                background: rgba(16, 20, 26, 0.96);
+                backdrop-filter: blur(14px);
+                border-top: 1px solid var(--border);
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+            }
+
+            .mobile-nav-item {
+                background: none;
+                border: none;
+                color: var(--text-muted);
+                text-decoration: none;
+                font-family: 'Vazirmatn', sans-serif;
+                font-size: 0.72rem;
+                font-weight: 600;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 3px;
+                min-height: 48px;
+                cursor: pointer;
+                transition: var(--transition);
+            }
+
+            .mobile-nav-item .nav-ico {
+                font-size: 1.15rem;
+                line-height: 1;
+            }
+
+            .mobile-nav-item.active,
+            .mobile-nav-item:hover {
+                color: var(--accent);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-strip">
+        <div>فروش نقدی و اقساطی موتورسیکلت‌های صفر و در حد صفر با <strong>برگه کارشناسی معتبر</strong></div>
+        <div>ساعات بازدید حضوری: ۱۰ الی ۲۰ | مشاوره مستقیم: <strong>۰۲۱-۰۰۰۰۰۰۰۰</strong></div>
+    </div>
+
+    <header>
+        <a href="#" class="brand">
+            <span class="en">MOTO <span>APEX</span></span>
+            <span class="fa">نمایشگاه تخصصی موتورسیکلت موتو اَپکس</span>
+        </a>
+        <nav>
+            <a href="#showroom">ویترین موتورها</a>
+            <a href="#installment-calc">محاسبه اقساط</a>
+            <a href="#trade-in">معاوضه و فروش موتور شما</a>
+            <a href="#footer">آدرس نمایشگاه</a>
+        </nav>
+        <div class="header-actions">
+            <button type="button" class="btn-ghost" id="btn-open-admin">پنل مدیریت نمایشگاه</button>
+            <a href="#showroom" class="btn-accent">مشاهده موجودی‌ها</a>
+        </div>
+    </header>
+
+    <!-- بخش معرفی -->
+    <section class="hero">
+        <div>
+            <span class="hero-badge">تحویل فوری • سند دست اول • اقساط ۶ تا ۲۴ ماهه</span>
+            <h1>انتخاب مطمئن‌ترین موتورسیکلت با کارشناسی فنی و صدای واقعی اگزوز</h1>
+            <p>در نمایشگاه موتو اَپکس، مشخصات فنی تمام موتورها را کنار هم مقایسه کنید، صدای واقعی استارت و اگزوز هر مدل را بشنوید، شرایط اقساط را با اسلایدر محاسبه کنید و نوبت بازدید حضوری بگیرید.</p>
+            <div class="hero-cta">
+                <a href="#showroom" class="btn-accent">بررسی موتورسیکلت‌ها</a>
+                <a href="#installment-calc" class="btn-ghost">ماشین‌حساب اقساط</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item"><strong>۱۰۰٪</strong><span>تضمین کارشناسی فنی و شاسی</span></div>
+                <div class="stat-item"><strong>۳۰٪</strong><span>حداقل پیش‌پرداخت اقساط</span></div>
+                <div class="stat-item"><strong>۲۴ ساعته</strong><span>امکان معاوضه با موتور کارکرده</span></div>
+            </div>
+        </div>
+        <div class="hero-card">
+            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=950&q=80" alt="نمایشگاه موتورسیکلت موتو اپکس" onerror="this.src='https://placehold.co/900x600/14181F/FF5500?text=MOTO+APEX+SHOWROOM'">
+        </div>
+    </section>
+
+    <!-- ویترین موتورسیکلت‌ها -->
+    <section class="section" id="showroom">
+        <div class="section-title">
+            <h2>ویترین موتورسیکلت‌های نمایشگاه</h2>
+            <p>روی دکمه «🔊 صدای اگزوز» کلیک کنید یا چند موتور را برای مقایسه فنی انتخاب نمایید</p>
+        </div>
+
+        <div class="filters-wrap">
+            <div class="filter-row" id="cat-filters">
+                <button type="button" class="chip active" data-cat="all">همه کلاس‌ها</button>
+                <button type="button" class="chip" data-cat="نیکد و ریس">نیکد و ریس</button>
+                <button type="button" class="chip" data-cat="اسکوتر">اسکوتر</button>
+                <button type="button" class="chip" data-cat="ادونچر و کراس">ادونچر و کراس</button>
+            </div>
+            <div class="filter-row" id="cond-filters">
+                <button type="button" class="chip active" data-cond="all">صفر و کارشناسی‌شده</button>
+                <button type="button" class="chip" data-cond="صفر کیلومتر">فقط صفر کیلومتر</button>
+                <button type="button" class="chip" data-cond="در حد صفر (کارشناسی‌شده)">در حد صفر (کارشناسی‌شده)</button>
+            </div>
+        </div>
+
+        <div class="bikes-grid" id="bikes-container"></div>
+    </section>
+
+    <!-- ماشین حساب اقساط -->
+    <section class="section section-alt" id="installment-calc">
+        <div class="section-title">
+            <h2>ماشین‌حساب هوشمند خرید اقساطی و رزرو بازدید</h2>
+            <p>موتورسیکلت دلخواه، درصد پیش‌پرداخت و تعداد ماه‌های بازپرداخت را مشخص کنید</p>
+        </div>
+
+        <div class="calc-grid">
+            <div>
+                <div class="form-group">
+                    <label>انتخاب موتورسیکلت</label>
+                    <select id="calc-bike-select"></select>
+                </div>
+
+                <div class="form-group">
+                    <label>درصد پیش‌پرداخت: <strong id="calc-down-label" style="color:var(--accent);">40٪</strong></label>
+                    <input type="range" id="calc-down-slider" min="30" max="80" step="5" value="40">
+                </div>
+
+                <div class="form-group">
+                    <label>مدت بازپرداخت اقساط</label>
+                    <select id="calc-months-select">
+                        <option value="6">۶ ماهه (۳ فقره چک صیادی)</option>
+                        <option value="12" selected>۱۲ ماهه (۶ فقره چک صیادی)</option>
+                        <option value="18">۱۸ ماهه (۹ فقره چک صیادی)</option>
+                        <option value="24">۲۴ ماهه (۱۲ فقره چک صیادی)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>نوع درخواست</label>
+                    <select id="req-type-select">
+                        <option value="اقساطی">خرید اقساطی طبق محاسبه</option>
+                        <option value="نقدی">خرید نقدی با تحویل فوری</option>
+                        <option value="رزرو بازدید حضوری">رزرو نوبت بازدید حضوری در نمایشگاه</option>
+                    </select>
+                </div>
+
+                <div class="admin-grid-2">
+                    <div class="form-group">
+                        <label>نام و نام خانوادگی</label>
+                        <input type="text" id="req-cust-name" placeholder="مثلاً: امیرحسین کاظمی">
+                    </div>
+                    <div class="form-group">
+                        <label>شماره موبایل</label>
+                        <input type="tel" id="req-cust-phone" placeholder="09120000000">
+                    </div>
+                </div>
+
+                <button type="button" class="btn-accent" style="width:100%;" id="btn-submit-purchase">ثبت درخواست خرید / رزرو بازدید</button>
+            </div>
+
+            <div class="calc-summary">
+                <div>
+                    <h3 style="margin-bottom:14px;">جزئیات محاسبه مالی:</h3>
+                    <div class="summary-line"><span>قیمت نقدی موتورسیکلت:</span><strong id="sum-cash-price">0 تومان</strong></div>
+                    <div class="summary-line"><span>مبلغ پیش‌پرداخت:</span><strong id="sum-down-amount">0 تومان</strong></div>
+                    <div class="summary-line"><span>مانده تسهیلات نمایشگاه:</span><strong id="sum-loan-amount">0 تومان</strong></div>
+                    <div class="summary-line"><span>تعداد چک صیادی (هر ۲ ماه یک چک):</span><strong id="sum-checks-count">6 چک</strong></div>
+                    <div class="summary-line"><span>نرخ سود ماهانه نمایشگاه:</span><strong id="sum-interest-rate">3.5٪</strong></div>
+                </div>
+                <div class="summary-highlight">
+                    <span>مبلغ هر قسط ماهانه:</span>
+                    <span id="sum-monthly-installment" style="color:var(--accent); font-size:1.18rem;">0 تومان</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فرم فروش یا معاوضه موتور مشتری -->
+    <section class="section" id="trade-in">
+        <div class="section-title">
+            <h2>معاوضه یا فروش نقدی موتورسیکلت شما</h2>
+            <p>مشخصات موتور فعلی خود را ثبت کنید تا کارشناسان ما ظرف ۲ ساعت قیمت‌گذاری کنند</p>
+        </div>
+
+        <div class="calc-grid" style="max-width:780px; grid-template-columns:1fr;">
+            <div class="admin-grid-2">
+                <div class="form-group">
+                    <label>نام و نام خانوادگی مالک</label>
+                    <input type="text" id="trd-name" placeholder="مثلاً: مهدی رضایی">
+                </div>
+                <div class="form-group">
+                    <label>شماره موبایل</label>
+                    <input type="tel" id="trd-phone" placeholder="09121234567">
+                </div>
+                <div class="form-group">
+                    <label>مدل و برند موتورسیکلت فعلی</label>
+                    <input type="text" id="trd-model" placeholder="مثلاً: بنلی ۱۸۰S یا هوندا کلیک ۱۵۰">
+                </div>
+                <div class="form-group">
+                    <label>سال ساخت</label>
+                    <input type="text" id="trd-year" placeholder="مثلاً: ۱۴۰۱">
+                </div>
+                <div class="form-group">
+                    <label>کارکرد واقعی (کیلومتر)</label>
+                    <input type="number" id="trd-mileage" placeholder="12500" min="0">
+                </div>
+                <div class="form-group">
+                    <label>هدف درخواست</label>
+                    <select id="trd-type">
+                        <option value="معاوضه با موتور صفر">معاوضه با موتورهای نمایشگاه</option>
+                        <option value="فروش نقدی به نمایشگاه">فروش نقدی به نمایشگاه</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>توضیحات وضعیت فنی، رنگ‌شدگی و بیمه</label>
+                <textarea id="trd-note" rows="2" placeholder="مثلاً: بدون زمین‌خوردگی، سرویس‌ها به موقع انجام شده، بیمه ۸ ماه..."></textarea>
+            </div>
+            <button type="button" class="btn-accent" id="btn-submit-tradein">ثبت درخواست کارشناسی و قیمت‌گذاری</button>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-grid">
+            <div>
+                <h4 style="color:#fff; margin-bottom:10px;">نمایشگاه موتورسیکلت موتو اَپکس</h4>
+                <p>مرجع تخصصی خرید، فروش و معاوضه موتورسیکلت‌های صفر کیلومتر و کارشناسی‌شده همراه با شرایط اقساط منعطف.</p>
+            </div>
+            <div>
+                <h4 style="color:#fff; margin-bottom:10px;">نشانی و ساعات بازدید</h4>
+                <p>تهران، خیابان شریعتی، نرسیده به میدان قدس، پلاک ۱۲۰</p>
+                <p>همه‌روزه از ساعت ۱۰:۰۰ الی ۲۰:۰۰</p>
+            </div>
+            <div>
+                <h4 style="color:#fff; margin-bottom:10px;">ضمانت اصالت و امنیت معامله</h4>
+                <p>تمامی معاملات با مبایعه‌نامه رسمی نمایشگاه، استعلام خلافی و نقل‌وانتقال فوری سند انجام می‌شود.</p>
+            </div>
+        </div>
+        <div style="text-align:center; border-top:1px solid var(--border); padding-top:18px; font-size:0.8rem;">
+            طراحی و پیاده‌سازی اختصاصی برای نمایشگاه موتورسیکلت موتو اَپکس
+        </div>
+    </footer>
+
+    <!-- نوار شناور مقایسه فنی -->
+    <div class="compare-dock" id="compare-dock">
+        <div id="compare-dock-text" style="font-size:0.86rem; font-weight:600;"></div>
+        <div style="display:flex; gap:8px;">
+            <button type="button" class="btn-accent" style="padding:8px 14px;" id="btn-show-compare">مقایسه جدول فنی</button>
+            <button type="button" class="btn-ghost" style="padding:8px 12px;" id="btn-clear-compare">پاک کردن</button>
+        </div>
+    </div>
+
+    <!-- مودال جزئیات فنی و کارشناسی / جدول مقایسه -->
+    <div class="modal-overlay" id="universal-modal">
+        <div class="modal-box wide" id="universal-modal-body"></div>
+    </div>
+
+    <!-- مودال پنل مدیریت نمایشگاه -->
+    <div class="modal-overlay" id="admin-modal">
+        <div class="modal-box wide">
+            <span class="sheet-handle"></span>
+            <button type="button" class="close-btn" data-close-modal>×</button>
+            <h3 style="margin-bottom:6px;">پنل مدیریت نمایشگاه موتو اَپکس</h3>
+            <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:16px;">مدیریت موجودی موتورها، درخواست‌های خرید اقساطی، معاوضه‌ها و نرخ سود</p>
+            <div id="admin-panel-body"></div>
+        </div>
+    </div>
+
+    <!-- نوار ناوبری پایین صفحه مخصوص موبایل -->
+    <nav class="mobile-bottom-nav" aria-label="منوی سریع موبایل">
+        <a href="#showroom" class="mobile-nav-item active" data-mob-nav>
+            <span class="nav-ico">🏍️</span>
+            <span>ویترین</span>
+        </a>
+        <a href="#installment-calc" class="mobile-nav-item" data-mob-nav>
+            <span class="nav-ico">🧮</span>
+            <span>اقساط</span>
+        </a>
+        <a href="#trade-in" class="mobile-nav-item" data-mob-nav>
+            <span class="nav-ico">🔄</span>
+            <span>معاوضه</span>
+        </a>
+        <button type="button" class="mobile-nav-item" id="btn-open-admin-mobile">
+            <span class="nav-ico">⚙️</span>
+            <span>مدیریت</span>
+        </button>
+    </nav>
+
+    <div class="toast-wrap" id="toast-wrap"></div>
+
+    <script>
+        /**
+         * ابزارهای امنیتی برای جلوگیری از XSS و تولید توکن
+         */
+        const SecurityUtils = {
+            escapeHTML(val) {
+                if (val === null || val === undefined) return '';
+                return String(val)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+            },
+            safeUrl(url) {
+                const s = String(url || '').trim();
+                return s.startsWith('https://') ? s : 'https://placehold.co/900x600/14181F/FF5500?text=MOTO+APEX';
+            },
+            formatToman(num) {
+                return Math.round(Number(num) || 0).toLocaleString('fa-IR');
+            }
+        };
+
+        const Toast = {
+            show(msg, isError = false) {
+                const wrap = document.getElementById('toast-wrap');
+                const el = document.createElement('div');
+                el.className = `toast ${isError ? 'err' : ''}`;
+                el.textContent = msg;
+                wrap.appendChild(el);
+                setTimeout(() => el.remove(), 3800);
+            }
+        };
+
+        /**
+         * شبیه‌ساز صدای استارت و اگزوز موتورسیکلت با Web Audio API (بدون نیاز به فایل خارجی)
+         */
+        const ExhaustSoundEngine = {
+            ctx: null,
+            playRev(profile = 'single_250', btnEl = null) {
+                try {
+                    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                    if (!this.ctx) this.ctx = new AudioCtx();
+                    if (this.ctx.state === 'suspended') this.ctx.resume();
+
+                    const now = this.ctx.currentTime;
+                    const duration = 2.4;
+
+                    const osc1 = this.ctx.createOscillator();
+                    const osc2 = this.ctx.createOscillator();
+                    const filter = this.ctx.createBiquadFilter();
+                    const gain = this.ctx.createGain();
+
+                    let baseFreq = 58;
+                    let peakFreq = 165;
+                    osc1.type = 'sawtooth';
+                    osc2.type = 'triangle';
+
+                    if (profile === 'inline4_race') {
+                        baseFreq = 115;
+                        peakFreq = 390;
+                    } else if (profile === 'inline_twin') {
+                        baseFreq = 75;
+                        peakFreq = 235;
+                    } else if (profile === 'scooter_155') {
+                        baseFreq = 68;
+                        peakFreq = 145;
+                        osc1.type = 'triangle';
+                    }
+
+                    // الگوی دور موتور: درجا -> گاز اول -> رها کردن -> گاز دوم
+                    osc1.frequency.setValueAtTime(baseFreq, now);
+                    osc1.frequency.exponentialRampToValueAtTime(peakFreq, now + 0.55);
+                    osc1.frequency.exponentialRampToValueAtTime(baseFreq * 1.15, now + 1.0);
+                    osc1.frequency.exponentialRampToValueAtTime(peakFreq * 1.15, now + 1.65);
+                    osc1.frequency.exponentialRampToValueAtTime(baseFreq, now + duration);
+
+                    osc2.frequency.setValueAtTime(baseFreq * 2, now);
+                    osc2.frequency.exponentialRampToValueAtTime(peakFreq * 2, now + 0.55);
+                    osc2.frequency.exponentialRampToValueAtTime(baseFreq * 2, now + duration);
+
+                    filter.type = 'lowpass';
+                    filter.frequency.setValueAtTime(280, now);
+                    filter.frequency.linearRampToValueAtTime(950, now + 0.6);
+                    filter.frequency.linearRampToValueAtTime(320, now + duration);
+
+                    gain.gain.setValueAtTime(0.01, now);
+                    gain.gain.linearRampToValueAtTime(0.24, now + 0.15);
+                    gain.gain.linearRampToValueAtTime(0.18, now + 1.7);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+                    osc1.connect(filter);
+                    osc2.connect(filter);
+                    filter.connect(gain);
+                    gain.connect(this.ctx.destination);
+
+                    if (btnEl) {
+                        btnEl.classList.add('playing');
+                        btnEl.textContent = '🔊 در حال پخش صدای اگزوز...';
+                        setTimeout(() => {
+                            btnEl.classList.remove('playing');
+                            btnEl.textContent = '🔊 صدای اگزوز';
+                        }, duration * 1000);
+                    }
+
+                    osc1.start(now);
+                    osc2.start(now);
+                    osc1.stop(now + duration);
+                    osc2.stop(now + duration);
+                } catch (e) {
+                    Toast.show('مرورگر اجازه پخش صدا را نداد.', true);
+                }
+            }
+        };
+
+        /**
+         * کلاینت ارتباط با بک‌اند پایتون (همراه با حالت پشتیبان آفلاین برای پیش‌نمایش سریع)
+         */
+        const ApiClient = {
+            csrfToken: '',
+            offlineMode: false,
+
+            async request(url, options = {}) {
+                try {
+                    const opts = {
+                        credentials: 'same-origin',
+                        ...options,
+                        headers: { ...(options.headers || {}) }
+                    };
+                    if (opts.method && opts.method !== 'GET') {
+                        opts.headers['X-CSRF-Token'] = this.csrfToken;
+                    }
+                    const res = await fetch(url, opts);
+                    const data = await res.json().catch(() => ({}));
+                    if (data.csrfToken) this.csrfToken = data.csrfToken;
+                    this.offlineMode = false;
+                    return { ok: res.ok, status: res.status, data };
+                } catch (err) {
+                    this.offlineMode = true;
+                    return { ok: false, status: 0, data: { error: 'ارتباط با سرور پایتون (moto_app.py) برقرار نیست.' } };
+                }
+            }
+        };
+
+        const ShowroomApp = {
+            state: {
+                admin: null,
+                settings: {
+                    showroomName: 'نمایشگاه موتورسیکلت موتو اَپکس',
+                    monthlyInterestPercent: 3.5,
+                    minDownPaymentPercent: 30,
+                    maxInstallmentMonths: 24
+                },
+                motorcycles: [
+                    {
+                        id: 1,
+                        sku: 'MOTO-BN-250',
+                        title: 'بنلی TNT 250 جفت سیلندر',
+                        brand: 'Benelli',
+                        category: 'نیکد و ریس',
+                        condition_label: 'صفر کیلومتر',
+                        status: 'موجود در نمایشگاه',
+                        model_year: '۱۴۰۳',
+                        mileage_km: 0,
+                        price_toman: 315000000,
+                        installment_enabled: 1,
+                        engine_cc: '249 سی‌سی دو سیلندر آب‌خنک',
+                        top_speed: '158 کیلومتر بر ساعت',
+                        gearbox: '۶ سرعته دستی',
+                        brake_system: 'دیسکی جلو و عقب + ABS',
+                        fuel_consumption: '3.8 لیتر در ۱۰۰ کیلومتر',
+                        weight_kg: 164,
+                        seat_height_mm: 795,
+                        sound_profile: 'inline_twin',
+                        inspection_summary: 'صفر کیلومتر خشک • گارانتی شرکتی نیکران موتور • سند دست اول آماده انتقال',
+                        image_url: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=80',
+                        description: 'محبوب‌ترین نیکد دو سیلندر بازار ایران با صدای اگزوز بم و جذاب و شتاب‌گیری عالی.'
+                    },
+                    {
+                        id: 2,
+                        sku: 'MOTO-YM-155',
+                        title: 'یاماها ایروکس ۱۵۵ NVX نسخه ABS',
+                        brand: 'Yamaha',
+                        category: 'اسکوتر',
+                        condition_label: 'صفر کیلومتر',
+                        status: 'موجود در نمایشگاه',
+                        model_year: '۱۴۰۳',
+                        mileage_km: 0,
+                        price_toman: 248000000,
+                        installment_enabled: 1,
+                        engine_cc: '155 سی‌سی تک‌سیلندر VVA',
+                        top_speed: '124 کیلومتر بر ساعت',
+                        gearbox: 'اتوماتیک CVT',
+                        brake_system: 'ترمز جلو ABS + عقب کاسه‌ای',
+                        fuel_consumption: '2.3 لیتر در ۱۰۰ کیلومتر',
+                        weight_kg: 126,
+                        seat_height_mm: 790,
+                        sound_profile: 'scooter_155',
+                        inspection_summary: 'صفر کیلومتر وارداتی • کی‌لس استارت • سیستم زمان‌بندی متغیر سوپاپ VVA',
+                        image_url: 'https://images.unsplash.com/photo-1622185135505-2d795003994a?auto=format&fit=crop&w=900&q=80',
+                        description: 'اسکوتر اسپرت و پرشتاب شهری با مصرف سوخت بسیار پایین و استارت بی‌صدا.'
+                    },
+                    {
+                        id: 3,
+                        sku: 'MOTO-KW-25R',
+                        title: 'کاوازاکی نینجا ZX-25R چهارسیلندر',
+                        brand: 'Kawasaki',
+                        category: 'نیکد و ریس',
+                        condition_label: 'در حد صفر (کارشناسی‌شده)',
+                        status: 'موجود در نمایشگاه',
+                        model_year: '۱۴۰۲',
+                        mileage_km: 2400,
+                        price_toman: 690000000,
+                        installment_enabled: 0,
+                        engine_cc: '249 سی‌سی چهار سیلندر خطی',
+                        top_speed: '187 کیلومتر بر ساعت',
+                        gearbox: '۶ سرعته + کوییک‌شیفتر',
+                        brake_system: 'دیسک ۳۱۰ میلی‌متری + ABS دوکاناله',
+                        fuel_consumption: '4.6 لیتر در ۱۰۰ کیلومتر',
+                        weight_kg: 182,
+                        seat_height_mm: 785,
+                        sound_profile: 'inline4_race',
+                        inspection_summary: 'کارشناسی‌شده با تاییدیه کتبی: انجین و گیربکس پلمپ • بدون خط و خش • بیمه ۱۰ ماه',
+                        image_url: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=900&q=80',
+                        description: 'سوپراسپرت چهارسیلندر بی‌رقیب با ردلاین ۱۷,۰۰۰ دور بر دقیقه و صدای مسابقه‌ای واقعی.'
+                    }
+                ]
+            },
+            catFilter: 'all',
+            condFilter: 'all',
+            compareIds: [],
+
+            async init() {
+                this.bindEvents();
+                this.renderBikes();
+                this.populateBikeSelect();
+                this.updateCalculator();
+
+                const res = await ApiClient.request('/api/moto/state', { method: 'GET' });
+                if (res.ok && res.data.motorcycles) {
+                    this.state.admin = res.data.admin || null;
+                    this.state.settings = res.data.settings;
+                    this.state.motorcycles = res.data.motorcycles;
+                    this.renderBikes();
+                    this.populateBikeSelect();
+                    this.updateCalculator();
+                }
+            },
+
+            renderBikes() {
+                const container = document.getElementById('bikes-container');
+                const list = this.state.motorcycles.filter(b => {
+                    const mCat = this.catFilter === 'all' || b.category === this.catFilter;
+                    const mCond = this.condFilter === 'all' || b.condition_label === this.condFilter;
+                    return mCat && mCond;
+                });
+
+                if (list.length === 0) {
+                    container.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:var(--text-muted); padding:30px;">موتورسیکلتی با این فیلتر یافت نشد.</p>`;
+                    return;
+                }
+
+                container.innerHTML = list.map(b => {
+                    const stClass = b.status === 'موجود در نمایشگاه' ? 'st-available' : (b.status === 'پیش‌فروش' ? 'st-preorder' : 'st-sold');
+                    const isCompared = this.compareIds.includes(b.id);
+                    return `
+                        <div class="bike-card">
+                            <div class="bike-img-box">
+                                <span class="badge-status ${stClass}">${SecurityUtils.escapeHTML(b.status)}</span>
+                                <button type="button" class="sound-btn-float" data-sound="${SecurityUtils.escapeHTML(b.sound_profile)}">🔊 صدای اگزوز</button>
+                                <img src="${SecurityUtils.safeUrl(b.image_url)}" alt="${SecurityUtils.escapeHTML(b.title)}" onerror="this.src='https://placehold.co/900x600/14181F/FF5500?text=MOTO+APEX'">
+                            </div>
+                            <div class="bike-body">
+                                <div class="bike-meta">${SecurityUtils.escapeHTML(b.category)} • مدل ${SecurityUtils.escapeHTML(b.model_year)} • ${SecurityUtils.escapeHTML(b.condition_label)}</div>
+                                <h3 class="bike-title">${SecurityUtils.escapeHTML(b.title)}</h3>
+                                <div class="specs-strip">
+                                    <div><span>انجین</span><strong>${SecurityUtils.escapeHTML(b.engine_cc.split(' ')[0])} cc</strong></div>
+                                    <div><span>کارکرد</span><strong>${b.mileage_km === 0 ? 'صفر' : b.mileage_km.toLocaleString('fa-IR') + ' km'}</strong></div>
+                                    <div><span>شرایط فروش</span><strong>${b.installment_enabled ? 'نقد و اقساط' : 'فقط نقدی'}</strong></div>
+                                </div>
+                                <div class="price-row">
+                                    <span style="font-size:0.82rem; color:var(--text-muted);">قیمت نقدی:</span>
+                                    <div class="price-val">${SecurityUtils.formatToman(b.price_toman)} <small>تومان</small></div>
+                                </div>
+                                <div class="card-btns">
+                                    <button type="button" class="btn-accent" style="padding:8px 10px; font-size:0.8rem;" data-select-calc="${b.id}" ${b.status === 'فروخته شد' ? 'disabled' : ''}>
+                                        ${b.status === 'فروخته شد' ? 'فروخته شد' : 'محاسبه اقساط / خرید'}
+                                    </button>
+                                    <button type="button" class="btn-ghost" style="padding:8px 10px; font-size:0.8rem;" data-inspect="${b.id}">کارشناسی و فنی</button>
+                                    <button type="button" class="btn-ghost" style="padding:8px 10px; font-size:0.8rem; ${isCompared ? 'border-color:var(--accent); color:var(--accent);' : ''}" data-compare="${b.id}">
+                                        ${isCompared ? '✓' : '+ مقایسه'}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            },
+
+            populateBikeSelect() {
+                const sel = document.getElementById('calc-bike-select');
+                const available = this.state.motorcycles.filter(b => b.status !== 'فروخته شد');
+                sel.innerHTML = available.map(b =>
+                    `<option value="${b.id}">${SecurityUtils.escapeHTML(b.title)} — (${SecurityUtils.formatToman(b.price_toman)} تومان)</option>`
+                ).join('');
+                const slider = document.getElementById('calc-down-slider');
+                slider.min = this.state.settings.minDownPaymentPercent;
+                if (Number(slider.value) < Number(slider.min)) slider.value = slider.min;
+            },
+
+            updateCalculator() {
+                const bikeId = Number(document.getElementById('calc-bike-select').value);
+                const bike = this.state.motorcycles.find(b => b.id === bikeId) || this.state.motorcycles[0];
+                if (!bike) return;
+
+                const downPct = Number(document.getElementById('calc-down-slider').value);
+                const months = Number(document.getElementById('calc-months-select').value);
+                const interestPct = Number(this.state.settings.monthlyInterestPercent);
+
+                document.getElementById('calc-down-label').textContent = `${downPct}٪`;
+                const price = bike.price_toman;
+                const downAmount = Math.round(price * (downPct / 100));
+                const loan = price - downAmount;
+                const totalPayback = loan + Math.round(loan * (interestPct / 100) * months);
+                const monthly = Math.round(totalPayback / months);
+                const checks = Math.max(1, Math.ceil(months / 2));
+
+                document.getElementById('sum-cash-price').textContent = `${SecurityUtils.formatToman(price)} تومان`;
+                document.getElementById('sum-down-amount').textContent = `${SecurityUtils.formatToman(downAmount)} تومان`;
+                document.getElementById('sum-loan-amount').textContent = `${SecurityUtils.formatToman(loan)} تومان`;
+                document.getElementById('sum-checks-count').textContent = `${checks} فقره چک صیادی`;
+                document.getElementById('sum-interest-rate').textContent = `${interestPct}٪ ماهانه`;
+                document.getElementById('sum-monthly-installment').textContent = `${SecurityUtils.formatToman(monthly)} تومان`;
+            },
+
+            openInspectionModal(bikeId) {
+                const b = this.state.motorcycles.find(item => item.id === bikeId);
+                if (!b) return;
+                const modal = document.getElementById('universal-modal');
+                const body = document.getElementById('universal-modal-body');
+                body.innerHTML = `
+                    <span class="sheet-handle"></span>
+                    <button type="button" class="close-btn" data-close-modal>×</button>
+                    <h3 style="margin-bottom:6px;">${SecurityUtils.escapeHTML(b.title)}</h3>
+                    <p style="font-size:0.84rem; color:var(--accent); margin-bottom:14px;">کد نمایشگاه: ${SecurityUtils.escapeHTML(b.sku)} | برند: ${SecurityUtils.escapeHTML(b.brand)} | مدل ${SecurityUtils.escapeHTML(b.model_year)}</p>
+                    <div style="background:rgba(22,163,74,0.12); border:1px solid rgba(22,163,74,0.4); padding:14px; border-radius:8px; margin-bottom:16px;">
+                        <strong style="color:#4ADE80; display:block; margin-bottom:4px;">✓ برگه کارشناسی فنی نمایشگاه موتو اَپکس:</strong>
+                        <span style="font-size:0.88rem;">${SecurityUtils.escapeHTML(b.inspection_summary)}</span>
+                    </div>
+                    <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:16px;">${SecurityUtils.escapeHTML(b.description)}</p>
+                    <table class="compare-table">
+                        <tr><th>حجم و نوع انجین</th><td>${SecurityUtils.escapeHTML(b.engine_cc)}</td></tr>
+                        <tr><th>حداکثر سرعت</th><td>${SecurityUtils.escapeHTML(b.top_speed)}</td></tr>
+                        <tr><th>گیربکس</th><td>${SecurityUtils.escapeHTML(b.gearbox)}</td></tr>
+                        <tr><th>سیستم ترمز</th><td>${SecurityUtils.escapeHTML(b.brake_system)}</td></tr>
+                        <tr><th>مصرف سوخت</th><td>${SecurityUtils.escapeHTML(b.fuel_consumption)}</td></tr>
+                        <tr><th>وزن خشک / ارتفاع زین</th><td>${b.weight_kg} کیلوگرم / ${b.seat_height_mm} میلی‌متر</td></tr>
+                    </table>
+                `;
+                modal.classList.add('open');
+            },
+
+            toggleCompare(bikeId) {
+                const idx = this.compareIds.indexOf(bikeId);
+                if (idx >= 0) {
+                    this.compareIds.splice(idx, 1);
+                } else {
+                    if (this.compareIds.length >= 3) {
+                        Toast.show('حداکثر ۳ موتورسیکلت را می‌توانید هم‌زمان مقایسه کنید.', true);
+                        return;
+                    }
+                    this.compareIds.push(bikeId);
+                }
+                this.renderBikes();
+                const dock = document.getElementById('compare-dock');
+                if (this.compareIds.length > 0) {
+                    dock.classList.add('visible');
+                    document.getElementById('compare-dock-text').textContent = `${this.compareIds.length} موتورسیکلت برای مقایسه فنی انتخاب شده است`;
+                } else {
+                    dock.classList.remove('visible');
+                }
+            },
+
+            openCompareTable() {
+                const bikes = this.compareIds.map(id => this.state.motorcycles.find(b => b.id === id)).filter(Boolean);
+                if (bikes.length < 2) {
+                    Toast.show('لطفاً حداقل ۲ موتورسیکلت را برای مقایسه انتخاب کنید.', true);
+                    return;
+                }
+                const modal = document.getElementById('universal-modal');
+                const body = document.getElementById('universal-modal-body');
+                body.innerHTML = `
+                    <span class="sheet-handle"></span>
+                    <button type="button" class="close-btn" data-close-modal>×</button>
+                    <h3 style="margin-bottom:12px;">مقایسه فنی موتورسیکلت‌ها</h3>
+                    <div style="overflow-x:auto;">
+                        <table class="compare-table">
+                            <tr>
+                                <th>مشخصات</th>
+                                ${bikes.map(b => `<th>${SecurityUtils.escapeHTML(b.title)}</th>`).join('')}
+                            </tr>
+                            <tr><td>قیمت نقدی</td>${bikes.map(b => `<td><strong>${SecurityUtils.formatToman(b.price_toman)} تومان</strong></td>`).join('')}</tr>
+                            <tr><td>حجم انجین</td>${bikes.map(b => `<td>${SecurityUtils.escapeHTML(b.engine_cc)}</td>`).join('')}</tr>
+                            <tr><td>حداکثر سرعت</td>${bikes.map(b => `<td>${SecurityUtils.escapeHTML(b.top_speed)}</td>`).join('')}</tr>
+                            <tr><td>گیربکس</td>${bikes.map(b => `<td>${SecurityUtils.escapeHTML(b.gearbox)}</td>`).join('')}</tr>
+                            <tr><td>سیستم ترمز</td>${bikes.map(b => `<td>${SecurityUtils.escapeHTML(b.brake_system)}</td>`).join('')}</tr>
+                            <tr><td>مصرف سوخت</td>${bikes.map(b => `<td>${SecurityUtils.escapeHTML(b.fuel_consumption)}</td>`).join('')}</tr>
+                            <tr><td>وزن / ارتفاع زین</td>${bikes.map(b => `<td>${b.weight_kg} kg / ${b.seat_height_mm} mm</td>`).join('')}</tr>
+                        </table>
+                    </div>
+                `;
+                modal.classList.add('open');
+            },
+
+            async openAdminPanel() {
+                const modal = document.getElementById('admin-modal');
+                const body = document.getElementById('admin-panel-body');
+                modal.classList.add('open');
+
+                if (!this.state.admin) {
+                    body.innerHTML = `
+                        <div style="max-width:400px; margin:10px auto;">
+                            <div class="form-group">
+                                <label>شماره موبایل مدیر نمایشگاه</label>
+                                <input type="tel" id="adm-login-phone" placeholder="09120000001">
+                            </div>
+                            <div class="form-group">
+                                <label>رمز عبور مدیر</label>
+                                <input type="password" id="adm-login-pass" placeholder="MotoAdmin@2026!">
+                            </div>
+                            <button type="button" class="btn-accent" style="width:100%;" id="btn-adm-login">ورود به پنل نمایشگاه</button>
+                        </div>
+                    `;
+                    document.getElementById('btn-adm-login').onclick = async () => {
+                        const phone = document.getElementById('adm-login-phone').value.trim();
+                        const password = document.getElementById('adm-login-pass').value;
+                        const res = await ApiClient.request('/api/moto/admin/login', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ phone, password })
+                        });
+                        if (res.ok) {
+                            this.state.admin = res.data.admin;
+                            Toast.show('خوش آمدید، مدیر نمایشگاه');
+                            this.openAdminPanel();
+                        } else {
+                            Toast.show(res.data.error || 'خطا در ورود.', true);
+                        }
+                    };
+                    return;
+                }
+
+                body.innerHTML = `<p style="text-align:center; padding:20px;">در حال دریافت اطلاعات نمایشگاه...</p>`;
+                const dash = await ApiClient.request('/api/moto/admin/dashboard', { method: 'GET' });
+                const purchases = dash.ok ? dash.data.purchaseRequests : [];
+                const tradeIns = dash.ok ? dash.data.tradeInRequests : [];
+
+                body.innerHTML = `
+                    <div class="admin-tabs">
+                        <button type="button" class="chip active" data-adm-tab="requests">درخواست‌های خرید و اقساط (${purchases.length})</button>
+                        <button type="button" class="chip" data-adm-tab="tradeins">معاوضه و کارشناسی (${tradeIns.length})</button>
+                        <button type="button" class="chip" data-adm-tab="addbike">افزودن / مدیریت موجودی موتور</button>
+                        <button type="button" class="chip" data-adm-tab="settings">تنظیمات اقساط</button>
+                        <button type="button" class="btn-ghost" style="margin-right:auto; padding:6px 12px;" id="btn-adm-logout">خروج</button>
+                    </div>
+                    <div id="adm-tab-view"></div>
+                `;
+
+                const renderAdmTab = (tab) => {
+                    document.querySelectorAll('[data-adm-tab]').forEach(el => el.classList.toggle('active', el.dataset.admTab === tab));
+                    const view = document.getElementById('adm-tab-view');
+
+                    if (tab === 'requests') {
+                        view.innerHTML = purchases.length === 0
+                            ? '<p style="color:var(--text-muted);">هنوز درخواستی ثبت نشده است.</p>'
+                            : purchases.map(r => `
+                                <div class="req-card">
+                                    <div style="display:flex; justify-content:space-between; flex-wrap:wrap;">
+                                        <strong>${SecurityUtils.escapeHTML(r.tracking_code)} — ${SecurityUtils.escapeHTML(r.motorcycle_title)}</strong>
+                                        <span style="color:var(--accent); font-weight:700;">${SecurityUtils.escapeHTML(r.payment_type)}</span>
+                                    </div>
+                                    <div style="font-size:0.84rem; margin-top:4px;">مشتری: ${SecurityUtils.escapeHTML(r.customer_name)} | موبایل: ${SecurityUtils.escapeHTML(r.customer_phone)}</div>
+                                    ${r.payment_type === 'اقساطی' ? `<div style="font-size:0.82rem; color:var(--text-muted);">پیش‌پرداخت: ${SecurityUtils.formatToman(r.down_payment_amount)} تومان | ${r.months_count} قسط ${SecurityUtils.formatToman(r.monthly_installment)} تومانی</div>` : ''}
+                                </div>
+                            `).join('');
+                    } else if (tab === 'tradeins') {
+                        view.innerHTML = tradeIns.length === 0
+                            ? '<p style="color:var(--text-muted);">درخواست معاوضه‌ای ثبت نشده است.</p>'
+                            : tradeIns.map(t => `
+                                <div class="req-card">
+                                    <strong>${SecurityUtils.escapeHTML(t.tracking_code)} — ${SecurityUtils.escapeHTML(t.bike_model)} (مدل ${SecurityUtils.escapeHTML(t.bike_year)})</strong>
+                                    <div style="font-size:0.84rem;">مالک: ${SecurityUtils.escapeHTML(t.owner_name)} (${SecurityUtils.escapeHTML(t.owner_phone)}) | کارکرد: ${t.mileage_km} km</div>
+                                    <div style="font-size:0.82rem; color:var(--text-muted);">${SecurityUtils.escapeHTML(t.condition_note)}</div>
+                                </div>
+                            `).join('');
+                    } else if (tab === 'addbike') {
+                        view.innerHTML = `
+                            <h4 style="margin-bottom:10px;">تغییر سریع وضعیت موتورهای فعلی</h4>
+                            <div style="margin-bottom:18px;">
+                                ${this.state.motorcycles.map(m => `
+                                    <div style="display:flex; justify-content:space-between; align-items:center; padding:8px; border-bottom:1px solid var(--border); flex-wrap:wrap; gap:6px;">
+                                        <span>${SecurityUtils.escapeHTML(m.title)} (${SecurityUtils.escapeHTML(m.status)})</span>
+                                        <div style="display:flex; gap:6px;">
+                                            <button type="button" class="chip" data-set-bike-st="${m.id}" data-st="موجود در نمایشگاه">موجود</button>
+                                            <button type="button" class="chip" data-set-bike-st="${m.id}" data-st="پیش‌فروش">پیش‌فروش</button>
+                                            <button type="button" class="chip" data-set-bike-st="${m.id}" data-st="فروخته شد">فروخته شد</button>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            <h4 style="margin-bottom:10px;">افزودن موتورسیکلت جدید به نمایشگاه</h4>
+                            <div class="admin-grid-2">
+                                <div class="form-group"><label>عنوان کامل موتور</label><input type="text" id="new-b-title" placeholder="مثلاً: هوندا CB150R"></div>
+                                <div class="form-group"><label>برند</label><input type="text" id="new-b-brand" placeholder="Honda"></div>
+                                <div class="form-group"><label>دسته‌بندی</label><select id="new-b-cat"><option value="نیکد و ریس">نیکد و ریس</option><option value="اسکوتر">اسکوتر</option><option value="ادونچر و کراس">ادونچر و کراس</option></select></div>
+                                <div class="form-group"><label>وضعیت کارکرد</label><select id="new-b-cond"><option value="صفر کیلومتر">صفر کیلومتر</option><option value="در حد صفر (کارشناسی‌شده)">در حد صفر (کارشناسی‌شده)</option></select></div>
+                                <div class="form-group"><label>قیمت نقدی (تومان)</label><input type="number" id="new-b-price" placeholder="295000000"></div>
+                                <div class="form-group"><label>حجم انجین</label><input type="text" id="new-b-cc" placeholder="150 سی‌سی تک‌سیلندر"></div>
+                            </div>
+                            <div class="form-group"><label>لینک تصویر باکیفیت (HTTPS)</label><input type="url" id="new-b-img" placeholder="https://images.unsplash.com/..."></div>
+                            <button type="button" class="btn-accent" style="width:100%;" id="btn-save-new-bike">ثبت موتور جدید در نمایشگاه</button>
+                        `;
+
+                        document.getElementById('btn-save-new-bike').onclick = async () => {
+                            const payload = {
+                                title: document.getElementById('new-b-title').value.trim(),
+                                brand: document.getElementById('new-b-brand').value.trim(),
+                                category: document.getElementById('new-b-cat').value,
+                                condition_label: document.getElementById('new-b-cond').value,
+                                price_toman: Number(document.getElementById('new-b-price').value),
+                                engine_cc: document.getElementById('new-b-cc').value.trim(),
+                                image_url: document.getElementById('new-b-img').value.trim()
+                            };
+                            const res = await ApiClient.request('/api/moto/admin/motorcycles', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify(payload)
+                            });
+                            if (res.ok) {
+                                Toast.show('موتورسیکلت جدید به نمایشگاه اضافه شد.');
+                                await this.init();
+                                this.openAdminPanel();
+                            } else {
+                                Toast.show(res.data.error || 'خطا در ثبت موتور.', true);
+                            }
+                        };
+                    } else if (tab === 'settings') {
+                        view.innerHTML = `
+                            <div class="admin-grid-2">
+                                <div class="form-group"><label>نرخ سود ماهانه اقساط (%)</label><input type="number" step="0.1" id="set-interest" value="${this.state.settings.monthlyInterestPercent}"></div>
+                                <div class="form-group"><label>حداقل درصد پیش‌پرداخت (%)</label><input type="number" id="set-down" value="${this.state.settings.minDownPaymentPercent}"></div>
+                            </div>
+                            <button type="button" class="btn-accent" id="btn-save-settings">ذخیره تنظیمات اقساط</button>
+                        `;
+                        document.getElementById('btn-save-settings').onclick = async () => {
+                            const res = await ApiClient.request('/api/moto/admin/settings', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    monthlyInterestPercent: document.getElementById('set-interest').value,
+                                    minDownPaymentPercent: document.getElementById('set-down').value
+                                })
+                            });
+                            if (res.ok) {
+                                Toast.show('تنظیمات اقساط ذخیره شد.');
+                                await this.init();
+                            } else {
+                                Toast.show(res.data.error || 'خطا در ذخیره تنظیمات.', true);
+                            }
+                        };
+                    }
+                };
+
+                document.querySelectorAll('[data-adm-tab]').forEach(btn => {
+                    btn.onclick = () => renderAdmTab(btn.dataset.admTab);
+                });
+
+                document.getElementById('btn-adm-logout').onclick = async () => {
+                    await ApiClient.request('/api/moto/admin/logout', { method: 'POST' });
+                    this.state.admin = null;
+                    modal.classList.remove('open');
+                    Toast.show('از پنل مدیریت خارج شدید.');
+                };
+
+                renderAdmTab('requests');
+            },
+
+            bindEvents() {
+                document.getElementById('calc-bike-select').onchange = () => this.updateCalculator();
+                document.getElementById('calc-down-slider').oninput = () => this.updateCalculator();
+                document.getElementById('calc-months-select').onchange = () => this.updateCalculator();
+
+                document.getElementById('btn-open-admin').onclick = () => this.openAdminPanel();
+                const mobAdminBtn = document.getElementById('btn-open-admin-mobile');
+                if (mobAdminBtn) mobAdminBtn.onclick = () => this.openAdminPanel();
+
+                document.querySelectorAll('[data-mob-nav]').forEach(item => {
+                    item.onclick = () => {
+                        document.querySelectorAll('.mobile-nav-item').forEach(n => n.classList.remove('active'));
+                        item.classList.add('active');
+                    };
+                });
+
+                document.getElementById('btn-show-compare').onclick = () => this.openCompareTable();
+                document.getElementById('btn-clear-compare').onclick = () => {
+                    this.compareIds = [];
+                    this.renderBikes();
+                    document.getElementById('compare-dock').classList.remove('visible');
+                };
+
+                document.getElementById('btn-submit-purchase').onclick = async () => {
+                    const payload = {
+                        motorcycle_id: Number(document.getElementById('calc-bike-select').value),
+                        down_payment_percent: Number(document.getElementById('calc-down-slider').value),
+                        months: Number(document.getElementById('calc-months-select').value),
+                        payment_type: document.getElementById('req-type-select').value,
+                        customer_name: document.getElementById('req-cust-name').value.trim(),
+                        customer_phone: document.getElementById('req-cust-phone').value.trim()
+                    };
+                    const res = await ApiClient.request('/api/moto/request-purchase', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (res.ok) {
+                        Toast.show(res.data.message);
+                        document.getElementById('req-cust-name').value = '';
+                        document.getElementById('req-cust-phone').value = '';
+                    } else {
+                        Toast.show(res.data.error || 'خطا در ثبت درخواست.', true);
+                    }
+                };
+
+                document.getElementById('btn-submit-tradein').onclick = async () => {
+                    const payload = {
+                        owner_name: document.getElementById('trd-name').value.trim(),
+                        owner_phone: document.getElementById('trd-phone').value.trim(),
+                        bike_model: document.getElementById('trd-model').value.trim(),
+                        bike_year: document.getElementById('trd-year').value.trim(),
+                        mileage_km: Number(document.getElementById('trd-mileage').value || 0),
+                        request_type: document.getElementById('trd-type').value,
+                        condition_note: document.getElementById('trd-note').value.trim()
+                    };
+                    const res = await ApiClient.request('/api/moto/trade-in', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (res.ok) {
+                        Toast.show(res.data.message);
+                        document.getElementById('trd-name').value = '';
+                        document.getElementById('trd-phone').value = '';
+                        document.getElementById('trd-model').value = '';
+                    } else {
+                        Toast.show(res.data.error || 'خطا در ثبت معاوضه.', true);
+                    }
+                };
+
+                document.addEventListener('click', async (e) => {
+                    if (e.target.hasAttribute('data-close-modal') || e.target.classList.contains('modal-overlay')) {
+                        document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('open'));
+                    }
+                    if (e.target.dataset.cat) {
+                        document.querySelectorAll('#cat-filters .chip').forEach(c => c.classList.remove('active'));
+                        e.target.classList.add('active');
+                        this.catFilter = e.target.dataset.cat;
+                        this.renderBikes();
+                    }
+                    if (e.target.dataset.cond) {
+                        document.querySelectorAll('#cond-filters .chip').forEach(c => c.classList.remove('active'));
+                        e.target.classList.add('active');
+                        this.condFilter = e.target.dataset.cond;
+                        this.renderBikes();
+                    }
+                    if (e.target.dataset.sound) {
+                        ExhaustSoundEngine.playRev(e.target.dataset.sound, e.target);
+                    }
+                    if (e.target.dataset.inspect) {
+                        this.openInspectionModal(Number(e.target.dataset.inspect));
+                    }
+                    if (e.target.dataset.compare) {
+                        this.toggleCompare(Number(e.target.dataset.compare));
+                    }
+                    if (e.target.dataset.selectCalc) {
+                        document.getElementById('calc-bike-select').value = e.target.dataset.selectCalc;
+                        this.updateCalculator();
+                        document.getElementById('installment-calc').scrollIntoView({ behavior: 'smooth' });
+                    }
+                    if (e.target.dataset.setBikeSt) {
+                        const bikeId = e.target.dataset.setBikeSt;
+                        const st = e.target.dataset.st;
+                        const res = await ApiClient.request(`/api/moto/admin/motorcycles/${bikeId}/status`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ status: st })
+                        });
+                        if (res.ok) {
+                            Toast.show(`وضعیت موتور به «${st}» تغییر کرد.`);
+                            await this.init();
+                            this.openAdminPanel();
+                        }
+                    }
+                });
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => ShowroomApp.init());
+    </script>
+</body>
+</html>
